@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Falcon Site</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: black;
+            background-image: url('main.png');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+        }
+        .login-form {
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 300px;
+            background-color: transparent;
+        }
+        .login-form input[type="password"], .login-form input[type="text"] {
+            width: 93%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: black;
+            color: red;
+            font-size: 20px;
+        }
+        .login-form button {
+            padding: 10px;
+            background-color: red;
+            border: none;
+            border-radius: 5px;
+            color: black;
+            font-size: 20px;
+            font-weight: bold;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+        #second-form {
+            background-color: transparent;
+            color: red;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-form">
+        <input type="password" id="password" placeholder="Enter your password">
+        <button onclick="login()">Login</button>
+    </div>
+    <form id="second-form" style="display: none;">
+        <h1><br><br><br><br>Welcome to Falcon</h1>
+        <h1>----Applications----</h1><br><br>
+        <pre>🚀 Coming Soon: <br> The Falcon App!
+Get ready to soar higher with Falcon! 🎉 
+Our revolutionary application is launching 
+soon,designed to elevate your experience 
+and simplify your journey. Stay tuned for
+updates, and be among the first to explore
+the future. <br><br>
+                                -Falcon </pre>
+    </form>
+
+    <script>
+        function login() {
+            const passwordInput = document.getElementById('password').value;
+            const correctPassword = 'falconwizard';
+        
+            if (passwordInput === correctPassword) {
+                document.querySelector('.login-form').style.display = 'none';
+                document.getElementById('second-form').style.display = 'block';
+            } else {
+                alert('Incorrect password. Please try again.');
+            }
+        }
+    </script>
+</body>
+</html>
